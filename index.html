@@ -15,14 +15,16 @@
     </script>
     <script>
         // Handle direct navigation to routes
-        var path = window.location.pathname;
-        var basePath = '/flippa5';
-        if (path.startsWith(basePath)) {
-            path = path.slice(basePath.length);
-        }
-        if (path !== '/' && path !== '') {
-            window.location.href = basePath + '/?p=' + path;
-        }
+        window.addEventListener('load', function() {
+            var path = window.location.pathname;
+            var basePath = '/flippa5';
+            if (path.startsWith(basePath)) {
+                path = path.slice(basePath.length);
+            }
+            if (path !== '/' && path !== '') {
+                window.location.href = basePath + '/?p=' + path;
+            }
+        });
     </script><style id="expo-reset">#root,body,html{height:100%}body{overflow:hidden}#root{display:flex}</style><style id="react-native-stylesheet">[stylesheet-group="0"]{}
 body{margin:0;}
 button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0;}
