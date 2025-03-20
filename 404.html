@@ -18,7 +18,15 @@
             }
         }(window.location))
     </script>
-    <meta http-equiv="refresh" content="0;URL='/'">
+    <script>
+        // Handle direct navigation to routes
+        var path = window.location.pathname;
+        if (path !== '/') {
+            window.location.href = '/?p=' + path;
+        } else {
+            window.location.href = '/';
+        }
+    </script>
 </head>
 <body>
     Redirecting...
