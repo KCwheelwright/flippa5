@@ -26,11 +26,9 @@
         if (path.startsWith(basePath)) {
             path = path.slice(basePath.length);
         }
-        if (path !== '/' && path !== '') {
-            var searchParams = new URLSearchParams(window.location.search);
-            if (!searchParams.has('p')) {
-                window.location.href = basePath + '/?p=' + path;
-            }
+        var searchParams = new URLSearchParams(window.location.search);
+        if (!searchParams.has('p') && path !== '/' && path !== '') {
+            window.location.href = basePath + '/?p=' + path;
         } else {
             window.location.href = basePath + '/';
         }
