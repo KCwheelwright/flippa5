@@ -3,6 +3,7 @@
 <head>
     <meta charset="utf-8">
     <title>Redirecting...</title>
+    <base href="/flippa5/"/>
     <script type="text/javascript">
         // Single Page Apps for GitHub Pages
         // MIT License
@@ -21,10 +22,14 @@
     <script>
         // Handle direct navigation to routes
         var path = window.location.pathname;
+        var basePath = '/flippa5';
+        if (path.startsWith(basePath)) {
+            path = path.slice(basePath.length);
+        }
         if (path !== '/') {
-            window.location.href = '/?p=' + path;
+            window.location.href = basePath + '/?p=' + path;
         } else {
-            window.location.href = '/';
+            window.location.href = basePath + '/';
         }
     </script>
 </head>

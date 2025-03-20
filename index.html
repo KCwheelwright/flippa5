@@ -1,4 +1,4 @@
-<!DOCTYPE html><html  lang="en"><head><title data-rh="true"></title><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><script type="text/javascript">
+<!DOCTYPE html><html  lang="en"><head><title data-rh="true"></title><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><base href="/flippa5/"/><script type="text/javascript">
         // Single Page Apps for GitHub Pages
         // MIT License
         // https://github.com/rafgraph/spa-github-pages
@@ -16,8 +16,12 @@
     <script>
         // Handle direct navigation to routes
         var path = window.location.pathname;
+        var basePath = '/flippa5';
+        if (path.startsWith(basePath)) {
+            path = path.slice(basePath.length);
+        }
         if (path !== '/') {
-            window.location.href = '/?p=' + path;
+            window.location.href = basePath + '/?p=' + path;
         }
     </script><style id="expo-reset">#root,body,html{height:100%}body{overflow:hidden}#root{display:flex}</style><style id="react-native-stylesheet">[stylesheet-group="0"]{}
 body{margin:0;}
