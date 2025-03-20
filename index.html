@@ -20,8 +20,11 @@
         if (path.startsWith(basePath)) {
             path = path.slice(basePath.length);
         }
-        if (path !== '/') {
-            window.location.href = basePath + '/?p=' + path;
+        if (path !== '/' && path !== '') {
+            var searchParams = new URLSearchParams(window.location.search);
+            if (!searchParams.has('p')) {
+                window.location.href = basePath + '/?p=' + path;
+            }
         }
     </script><style id="expo-reset">#root,body,html{height:100%}body{overflow:hidden}#root{display:flex}</style><style id="react-native-stylesheet">[stylesheet-group="0"]{}
 body{margin:0;}
