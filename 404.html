@@ -26,8 +26,7 @@
         if (path.startsWith(basePath)) {
             path = path.slice(basePath.length);
         }
-        var searchParams = new URLSearchParams(window.location.search);
-        if (!searchParams.has('p') && path !== '/' && path !== '') {
+        if (path !== '/' && path !== '') {
             window.location.href = basePath + '/?p=' + path;
         } else {
             window.location.href = basePath + '/';
